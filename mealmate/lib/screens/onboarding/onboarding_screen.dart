@@ -25,7 +25,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       "image": "assets/images/chef_male.png"
     },
     {
-      "text": "Enter your allegies \nand we will tailor your \nrecipe",
+      "text": "Enter your allegies \nand we will tailor \nyour recipe",
       "image": "assets/images/greens.png"
     },
   ];
