@@ -30,7 +30,7 @@ class WideLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child:NarrowLayout());
+    return Container(child:const NarrowLayout());
   }
 }
 
