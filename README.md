@@ -66,6 +66,7 @@ samples, guidance on mobile development, and a full API reference.
 6. Or you can use your physical phone
 7. Run `flutter run` to run the app
 
-### Team
-- add the team members here with there GitHut using the following format 
-- [name](link)
+### Meet NutriHackz Team
+- [Chiamaka Stephanie](https://github.com/StephanieddQ1)
+- [Akebu](https://github.com/akebu6)
+- [Raghav Verma](https://github.com/Raghav-Verma21)
