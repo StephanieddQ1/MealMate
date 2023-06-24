@@ -69,7 +69,7 @@ class NarrowLayout extends StatelessWidget {
               // how to add spacing
               const SizedBox(height: 30),
               SizedBox(
-                  width: size.width * 0.8,
+                  width: size.width * 0.6,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: kPrimaryColor,
@@ -82,7 +82,7 @@ class NarrowLayout extends StatelessWidget {
                         ),
                       );
                     },
-                    child: const Text("Get Started"),
+                    child: const Text("GET STARTED"),
                   )),
             ],
           ),
