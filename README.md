@@ -35,18 +35,16 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 ## Running the application
-1. Fork the repo to your own profile
-2. Clone the repo to your local machine
+1. Install `Flutter` for your platform
+2. Fork the repo to your own profile
+3. Clone the repo to your local machine
    ```bash
    git clone https://github.com/StephanieddQ1/MealMate
    ```
-3. Make sure to run
-   ```bash
-   flutter pub get
-   ``` 
-   to fecth all the dependencies needed for the project to run
-4. You can use an emular inside your favourite IDE (VS Code or Android Studio)
-5. Or you can use your physical phone
+4. Make sure to run `flutter pub get` to fecth all the dependencies needed for the project to run
+5. You can use an emular inside your favourite IDE (VS Code or Android Studio)
+6. Or you can use your physical phone
+7. Run `flutter run` to run the app
 
 ### Team
 - add the team members here with there GitHut using the following format 
