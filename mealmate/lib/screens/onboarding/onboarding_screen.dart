@@ -18,15 +18,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   List<Map<String, String>> onbordingData = [
     {
       "text": "Enter your budget \nand we will personalise \nyour recipe",
-      "image": "assets/images/pear.png"
+      "image": "assets/images/budget.png"
     },
     {
       "text": "Enter your region \nand we will personalise \nyour recipe",
-      "image": "assets/images/chef_male.png"
+      "image": "assets/images/region.png"
     },
     {
       "text": "Enter your allegies \nand we will tailor \nyour recipe",
-      "image": "assets/images/greens.png"
+      "image": "assets/images/allegies.png"
     },
   ];
 
