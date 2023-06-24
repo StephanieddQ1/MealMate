@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:mealmate/screens/home/home_screen.dart';
-import 'package:mealmate/screens/workshops/workshop_screen.dart';
+import 'package:mealmate/screens/chat/chat_screen.dart';
 
-class ChatScreen extends StatefulWidget {
-  static const routeName = "/chat_screen";
-  const ChatScreen({super.key});
+class WorkshopsScreen extends StatefulWidget {
+  static const routeName = "/workshop_screen";
+  const WorkshopsScreen({super.key});
 
   @override
-  State<ChatScreen> createState() => _ChatScreenState();
+  State<WorkshopsScreen> createState() => _WorkshopsScreenState();
 }
 
-class _ChatScreenState extends State<ChatScreen> {
+class _WorkshopsScreenState extends State<WorkshopsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Chat"),
+        title: const Text("Workshops"),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
+        currentIndex: 2,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.chat),
@@ -34,13 +34,18 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
         ],
         onTap: (value) => {
-          if (value == 1) {
+          if (value == 0)
+            {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const HomeScreen()))
-          } else if (value == 2) {
-            Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const WorkshopsScreen()))
-          }
+                  MaterialPageRoute(builder: (context) => const ChatScreen()))
+            }
+          else if (value == 1)
+            {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const HomeScreen()))
+            }
         },
       ),
     );
@@ -54,7 +59,7 @@ class BottomNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ChatScreen(),
+      home: WorkshopsScreen(),
     );
   }
 }

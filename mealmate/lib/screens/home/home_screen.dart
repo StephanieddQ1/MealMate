@@ -10,6 +10,12 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Home",
+          style: Theme.of(context).appBarTheme.titleTextStyle,
+        ),
+      ),
       body: SafeArea(
         child: SizedBox(
           width: double.infinity,
