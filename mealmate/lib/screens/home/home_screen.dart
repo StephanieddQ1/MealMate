@@ -2,13 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:mealmate/constants.dart';
 import 'package:mealmate/screens/chat/chat_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   static const routeName = "/home_screen";
   const HomeScreen({super.key});
 
   @override
+  State<StatefulWidget> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    String? selectedValue;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -28,7 +36,7 @@ class HomeScreen extends StatelessWidget {
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Image(
-                  image: AssetImage("assets/images/chef_male.png"),
+                  image: AssetImage("assets/images/chef_female.png"),
                   width: 250,
                   height: 200,
                 ),
@@ -44,11 +52,34 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: TextField(
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(), hintText: 'Enter amount'),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(50)
+                      ), hintText: 'Enter amount'),
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Text(
+                  "Allergies",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                child: TextField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(50)
+                      ), hintText: 'Enter allergies'),
                 ),
               ),
               const Padding(
@@ -61,29 +92,35 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                child: TextField(
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                child: DropdownButtonFormField(
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(), hintText: 'Enter region'),
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Text(
-                  "Allegies",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                  ),
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                child: TextField(
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Enter your allergies'),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Colors.blue, width: 2),
+                        borderRadius: BorderRadius.circular(20)
+                      ), hintText: 'Enter region'),
+                  items: <String>[
+                    'Africa', 
+                    'Antarctica',
+                    'Asia',
+                    'Europe',
+                    'North America', 
+                    'Oceania',
+                    'South America'
+                    ].map((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                  validator: (value) => value == null ? "Select a country" : null,
+                  value: selectedValue,
+                  onChanged: (String? newValue) {
+                    setState(() {
+                    selectedValue = newValue!;
+                  });
+                  },
                 ),
               ),
               const SizedBox(height: 30),
@@ -109,4 +146,5 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+  
 }

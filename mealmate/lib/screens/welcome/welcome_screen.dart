@@ -41,11 +41,11 @@ class NarrowLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-        // decoration: const BoxDecoration(
-        //   image: DecorationImage(
-        //     image: AssetImage("assets/images/background.png"),
-        //     fit: BoxFit.cover,
-        //   )),
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/background.png"),
+            fit: BoxFit.cover,
+          )),
         child: SizedBox(
           width: double.infinity,
           child: Column(
@@ -59,12 +59,12 @@ class NarrowLayout extends StatelessWidget {
               ),
               const Text(
                 "MealMate",
-                style: TextStyle(fontSize: 36),
+                style: TextStyle(fontSize: 36, color: Colors.white),
               ),
               const SizedBox(height: 10),
               const Text(
                 "Your AI friendly meal budget helper.",
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 18, color: Colors.white),
               ),
               // how to add spacing
               const SizedBox(height: 30),
