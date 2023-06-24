@@ -41,7 +41,7 @@ Throughout this project, the NutriHackz team experienced significant personal an
 ## 🚀 What's next for MealMate
 Despite challenges, we remain determined in our goal to make MealMate a practical application for college students, empowering them to overcome food insecurities. Our commitment drives us forward toward achieving this mission.
 
-## Getting Started
+## ⛳ Getting Started
 
 This project is a starting point for a Flutter application.
 
@@ -54,7 +54,7 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-## Running the application
+## 💨 Running the application 
 1. Install `Flutter` for your platform
 2. Fork the repo to your own profile
 3. Clone the repo to your local machine
