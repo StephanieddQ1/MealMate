@@ -1,4 +1,4 @@
-# nourishu
+# MealMate
 
 A new Flutter project.
 
