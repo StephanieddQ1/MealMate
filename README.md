@@ -28,8 +28,9 @@ We were heavily inspired by the revised version of Double Diamond design process
 ## 😤 Challenges Encountered
 
 - **Coordinating diverse skills:** Choosing programming and design tools that suited everyone's preferences and skills posed initial implementation difficulties.
-- **Design consistency across platforms:** Balancing visual appeal and usability on the mobile apllication posed challenges due to differing viewing styles and limitations.
+- **Design consistency across platforms:** Balancing visual appeal and usability on the mobile application posed challenges due to differing viewing styles and limitations.
 - **Time zone differences:** Coordinating schedules and collaboration among team members from different countries with varying time zones posed significant challenges.
+- AI implementation using Chatgpt: We faced an error when implementing the API for AI integration with ChatGPT. Consequently, we developed a JSON file containing a dataset of foods, recipes, and continents using ChatGPT. Although it was time-consuming, we managed to overcome the challenges and successfully complete this task.
 
 ## ✨ Proud Achievements
 
