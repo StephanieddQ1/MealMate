@@ -1,4 +1,6 @@
 # MealMate
+![image](https://github.com/StephanieddQ1/MealMate/assets/80507385/b4955f1b-6745-4ce7-b48f-160a7fdde5ea)
+
 A WaffleHacks project that provides solutions to food insecurities among college students.
 
 ## 🛠️ Built With
@@ -32,6 +34,8 @@ We were heavily inspired by the revised version of Double Diamond design process
 - **Time zone differences:** Coordinating schedules and collaboration among team members from different countries with varying time zones posed significant challenges.
 
 ## ✨ Proud Achievements
+
+We take great pride in our ability to adapt and improvise when faced with situations where the available tools did not align with our goals. This showcases our flexibility and problem-solving skills, allowing us to find alternative solutions and navigate challenges successfully. A major achievement that stands out is the completion of the project, which highlights our determination, perseverance, and unwavering commitment to delivering results. Throughout the project, we remained focused and driven, overcoming obstacles and ensuring that our desired outcomes were achieved. Our firm belief in the project's success further fueled our motivation and confidence, fostering a positive mindset and a deep sense of accomplishment.
 
 ## 🙌 Insights from MealMate
 Throughout this project, the NutriHackz team experienced significant personal and professional growth:
