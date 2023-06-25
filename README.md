@@ -7,8 +7,13 @@ A WaffleHacks project that provides solutions to food insecurities among college
 - **HMTL**
 
 ## 💡 Inspiration 
+MealMate unites students worldwide, driven by a shared struggle against food insecurity. Our diverse NutriHackz team is dedicated to developing a tech solution for this relatable issue. Join us in transforming how students access nutritious meals and combat food insecurities. Together, we will make a difference!
 
-## 🤔 What it does 
+## 🤔 Purpose
+MealMate is a versatile web and mobile app that offers users a range of helpful features:
+- **Restaurant Recommendations:** Discover nearby restaurants that fit your budget and cater to your specific dietary needs.
+- **Recipe Chatbot:** Get personalized recipe suggestions based on your food preferences and choices.
+- **Workshop Suggestions:** Access a curated list of workshops and events focused on healthy feeding habits in your local area.
 
 ## 🎨 Design
 We were heavily inspired by the revised version of Double Diamond design process, which not only includes visual design, but a full-fledged research cycle in which you must discover and define your problem before tackling your solution & then finally deploy it.
@@ -20,16 +25,24 @@ We were heavily inspired by the revised version of Double Diamond design process
 > 3. Develop: think up solutions to the problem.
 > 4. Deliver: pick the best solution and build that.
 
-## 😤 Challenges we ran into 
+## 😤 Challenges Encountered
 
-## ✨ Accomplishments that we're proud of 
+- **Coordinating diverse skills:** Choosing programming and design tools that suited everyone's preferences and skills posed initial implementation difficulties.
+- **Design consistency across platforms:** Balancing visual appeal and usability between web and mobile posed challenges due to differing viewing styles and limitations.
+- **Time zone differences:** Coordinating schedules and collaboration among team members from different countries with varying time zones posed significant challenges.
 
-## 🙌 What we learned 
+## ✨ Proud Achievements
 
-## 🚀 What's next for MealMate
+## 🙌 Insights from MealMate
+Throughout this project, the NutriHackz team experienced significant personal and professional growth:
 
+- **Technical Skill Expansion:** Each member acquired new technical skills, ranging from programming languages to design tools, enhancing their expertise in the field.
+- **Behavioral Competency Development:** Collaborating on MealMate fostered crucial behavioral skills such as communication, teamwork, leadership, and adaptability. Embracing diverse perspectives and open-mindedness were key lessons learned in achieving shared objectives.
 
-## Getting Started
+## 🚀 MealMate's Next Chapter
+Despite challenges, we remain determined in our goal to make MealMate a practical application for college students, empowering them to overcome food insecurities. Our commitment drives us forward toward achieving this mission.
+
+## ⛳ Getting Started
 
 This project is a starting point for a Flutter application.
 
@@ -42,7 +55,7 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-## Running the application
+## 💨 Running the application 
 1. Install `Flutter` for your platform
 2. Fork the repo to your own profile
 3. Clone the repo to your local machine
@@ -54,6 +67,10 @@ samples, guidance on mobile development, and a full API reference.
 6. Or you can use your physical phone
 7. Run `flutter run` to run the app
 
-### Team
-- add the team members here with there GitHut using the following format 
-- [name](link)
+### ![Top Languages Card](https://github-readme-stats.vercel.app/api/top-langs/?username=StephanieddQ1&hide=Java,R,Python&layout=compact&theme=tokyonight)
+
+### Meet NutriHackz Team
+- [Chiamaka Stephanie](https://github.com/StephanieddQ1)
+- [Akebu](https://github.com/akebu6)
+- [Raghav Verma](https://github.com/Raghav-Verma21)
+

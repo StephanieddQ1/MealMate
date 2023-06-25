@@ -27,6 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: SizedBox(
           width: double.infinity,
+          height: 600,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -34,13 +35,18 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 20),
               // add an image here
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Image(
-                  image: AssetImage("assets/images/chef_female.png"),
-                  width: 250,
-                  height: 200,
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: Text(
+                  "Just one Step Away!",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 45,
+                    fontWeight: FontWeight.bold
+                  ),
                 ),
               ),
+              const Spacer(),
+              
               const SizedBox(height: 30),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
@@ -54,12 +60,16 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                child: TextField(
-                  decoration: InputDecoration(
+                child: SizedBox(
+                  width: size.width * 0.8,
+                  child: TextField(decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(50)
-                      ), hintText: 'Enter amount'),
+                       ), 
+                      hintText: 'Enter amount'
+                      ),
+                  ),
                 ),
               ),
               const Padding(
@@ -74,12 +84,15 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                child: TextField(
+                child: SizedBox(
+                  width: size.width * 0.8,
+                  child: TextField(
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(50)
                       ), hintText: 'Enter allergies'),
+                  ),
                 ),
               ),
               const Padding(
@@ -94,7 +107,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                child: DropdownButtonFormField(
+                child: SizedBox(
+                  width: size.width * 0.8,
+                  child: DropdownButtonFormField(
                   decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                         borderSide: const BorderSide(color: Colors.blue, width: 2),
@@ -114,32 +129,34 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Text(value),
                     );
                   }).toList(),
-                  validator: (value) => value == null ? "Select a country" : null,
-                  value: selectedValue,
-                  onChanged: (String? newValue) {
-                    setState(() {
-                    selectedValue = newValue!;
-                  });
-                  },
-                ),
+                    validator: (value) => value == null ? "Select a country" : null,
+                    value: selectedValue,
+                    onChanged: (String? newValue) {
+                      setState(() {
+                      selectedValue = newValue!;
+                    });
+                    },
+                  ),
+                )
               ),
               const SizedBox(height: 30),
               SizedBox(
-                  width: size.width * 0.8,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: kPrimaryColor,
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ChatScreen(),
-                        ),
-                      );
-                    },
-                    child: const Text("Submit"),
-                  )),
+                width: size.width * 0.8,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: kPrimaryColor,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ChatScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text("Submit"),
+                )
+              ),
             ],
           ),
         ),
