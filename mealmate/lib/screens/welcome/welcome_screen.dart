@@ -19,9 +19,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       } else {
         return const NarrowLayout();
       }
-      
-     })
-    );
+    }));
   }
 }
 
@@ -30,7 +28,7 @@ class WideLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child:const NarrowLayout());
+    return const NarrowLayout();
   }
 }
 
@@ -41,53 +39,52 @@ class NarrowLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-        decoration: const BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/background.png"),
-            fit: BoxFit.cover,
-          )),
-        child: SizedBox(
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Image(
-                image: AssetImage("assets/images/chef_female.png"),
-                width: 250,
-                height: 200,
-              ),
-              const Text(
-                "MealMate",
-                style: TextStyle(fontSize: 36, color: Colors.white),
-              ),
-              const SizedBox(height: 10),
-              const Text(
-                "Your AI friendly meal budget helper.",
-                style: TextStyle(fontSize: 18, color: Colors.white),
-              ),
-              // how to add spacing
-              const SizedBox(height: 30),
-              SizedBox(
-                  width: size.width * 0.6,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: kPrimaryColor,
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const OnboardingScreen(),
-                        ),
-                      );
-                    },
-                    child: const Text("GET STARTED"),
-                  )),
-            ],
-          ),
+        image: AssetImage("assets/images/background.png"),
+        fit: BoxFit.cover,
+      )),
+      child: SizedBox(
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Image(
+              image: AssetImage("assets/images/chef_female.png"),
+              width: 250,
+              height: 200,
+            ),
+            const Text(
+              "MealMate",
+              style: TextStyle(fontSize: 36, color: Colors.white),
+            ),
+            const SizedBox(height: 10),
+            const Text(
+              "Your AI friendly meal budget helper.",
+              style: TextStyle(fontSize: 18, color: Colors.white),
+            ),
+            // how to add spacing
+            const SizedBox(height: 30),
+            SizedBox(
+                width: size.width * 0.6,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: kPrimaryColor,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const OnboardingScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text("GET STARTED"),
+                )),
+          ],
         ),
-      );
+      ),
+    );
   }
 }
-
