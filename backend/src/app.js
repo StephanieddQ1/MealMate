@@ -1,28 +1,66 @@
-const fs = require('fs');
+// Import required modules
+const express = require('express');
+const app = express();
 
-// Read the recipes from the JSON file
-const recipesData = fs.readFileSync('/workspaces/MealMate/backend/dataset/low-budget/Africa.json', 'utf-8');
+app.get('/', (req, res) => {
+  // Get user's budget and food continent from the query parameters
+  const { budget, continent } = req.query;
 
-// Parse the JSON data
-const recipes = JSON.parse(recipesData);
+  // Check inputs
+  if (!budget || !continent) {
+    return res.status(400).json({ error: 'Invalid parameters' });
+  }
 
-// Check if any recipes exist
-if (recipes.length === 0) {
-  console.log('No recipes found.');
-} else {
-  // Get the first recipe in the array
-  const recipe = recipes[0];
+  // Check user's budget range
+  let budgetRange;
+  switch (budget) {
+    case 'low':
+      budgetRange = 'low-budget';
+      break;
+    case 'medium':
+      budgetRange = 'medium-budget';
+      break;
+    case 'high':
+      budgetRange = 'high-budget';
+      break;
+    default:
+      return res.status(400).json({ error: 'Invalid budget range' });
+  }
 
-  // Access the recipe details
-  const name = recipe.name;
-  const about = recipe.about;
-  const ingredients = recipe.ingredients;
-  const instructions = recipe.instructions;
+  // Load food data based on the selected continent
+  let foodData;
+  try {
+    foodData = require(`../dataset/${budgetRange}/${continent}.json`);
+  } catch (error) {
+    // If the continent file is not found, fallback to the 'rest.js' file
+    foodData = require(`./data/${budgetRange}/rest.js`);
+  }
 
-  // Print the recipe details
-  console.log(`Recipe: ${name} \n${about}`);
-  console.log('\nIngredients:');
-  ingredients.forEach(ingredient => console.log(ingredient));
-  console.log('\nInstructions:');
-  instructions.forEach(step => console.log(step));
-}
+  // Randomly select a food recommendation from the food data
+  const randomIndex = Math.floor(Math.random() * foodData.length);
+  const recommendation = foodData[randomIndex];
+
+  // HTML markup for the recommendations
+  const html = `
+    <h2>${recommendation.name}</h2>
+    <p>${recommendation.about}</p>
+    <h3>Ingredients:</h3>
+    <ul>
+      ${recommendation.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+    </ul>
+    <h3>Instructions:</h3>
+    <ul>
+      ${recommendation.instructions.map(instruction => `<li>${instruction}</li>`).join('')}
+    </ul>
+`;
+
+
+  // Send HTML markup as the response
+  res.send(html);
+});
+
+// Start the server
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
