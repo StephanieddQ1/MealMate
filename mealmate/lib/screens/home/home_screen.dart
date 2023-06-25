@@ -32,22 +32,24 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              const SizedBox(height: 20),
+              const Expanded(
+                flex: 5,
               // add an image here
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                child: Text(
-                  "Just one Step Away!",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 45,
-                    fontWeight: FontWeight.bold
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  child: Text(
+                    "Just one Step Away!",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 45,
+                      fontWeight: FontWeight.bold
+                    ),
                   ),
                 ),
               ),
-              const Spacer(),
               
-              const SizedBox(height: 30),
+              const SizedBox(height: 0),
+              
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
@@ -56,8 +58,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.black,
                     fontSize: 16,
                   ),
+                 ),
                 ),
-              ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: SizedBox(
@@ -69,9 +71,10 @@ class _HomeScreenState extends State<HomeScreen> {
                        ), 
                       hintText: 'Enter amount'
                       ),
-                  ),
+                   ),
+                 ),
                 ),
-              ),
+
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
@@ -81,7 +84,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontSize: 16,
                   ),
                 ),
-              ),
+               ),
+              
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: SizedBox(

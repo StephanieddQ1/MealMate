@@ -48,7 +48,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     return Scaffold(
       body: SafeArea(
         child: SizedBox(
-          width: double.infinity,
+          width: size.width * 1,
           child: Column(
             // ignore: prefer_const_literals_to_create_immutables
             children: [
