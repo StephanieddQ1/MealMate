@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mealmate/constants.dart';
 import 'package:mealmate/screens/chat/chat_screen.dart';
+import 'package:mealmate/screens/home/widgets/budget_dialog.dart';
 
 class HomeScreen extends StatefulWidget {
   static const routeName = "/home_screen";
@@ -11,6 +12,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late final TextEditingController budgetController;
+
+  @override
+  void initState() {
+    super.initState();
+    budgetController = TextEditingController();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,82 +33,69 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       body: SafeArea(
-        child: SizedBox(
-          width: double.infinity,
-          height: 600,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              const Expanded(
-                flex: 5,
-              // add an image here
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  child: Text(
-                    "Just one Step Away!",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 45,
-                      fontWeight: FontWeight.bold
-                    ),
+              const Center(
+                child: Text(
+                  "Just one Step Away!",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 48,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-              
-              const SizedBox(height: 0),
-              
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+              const SizedBox(height: 48),
+              const Align(
+                alignment: Alignment.centerLeft,
                 child: Text(
                   "Budget",
+                  textAlign: TextAlign.left,
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 16,
-                  ),
-                 ),
-                ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                child: SizedBox(
-                  width: size.width * 0.8,
-                  child: TextField(decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(50)
-                       ), 
-                      hintText: 'Enter amount'
-                      ),
-                   ),
-                 ),
-                ),
-
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Text(
-                  "Allergies",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                  ),
-                ),
-               ),
-              
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                child: SizedBox(
-                  width: size.width * 0.8,
-                  child: TextField(
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(50)
-                      ), hintText: 'Enter allergies'),
                   ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+              const SizedBox(height: 16),
+              GestureDetector(
+                onTap: () async {
+                  final selectedValue = await showDialog(
+                    context: context,
+                    builder: (context) {
+                      return BudgetDialogWidget(size: size);
+                    },
+                  );
+
+                  setState(() {
+                    budgetController.text =
+                        selectedValue ?? 'Please select a budget';
+                  });
+                },
+                child: TextField(
+                  enabled: false,
+                  style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                  ),
+                  controller: budgetController,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    hintText: 'Please select a budget',
+                  ),
+                ),
+              ),
+              const SizedBox(height: 24),
+              const Align(
+                alignment: Alignment.centerLeft,
                 child: Text(
                   "Region",
                   style: TextStyle(
@@ -109,63 +104,58 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                child: SizedBox(
-                  width: size.width * 0.8,
-                  child: DropdownButtonFormField(
+              const SizedBox(height: 16),
+              SizedBox(
+                // width: size.width * 0.8,
+                child: DropdownButtonFormField(
                   decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.blue, width: 2),
-                        borderRadius: BorderRadius.circular(20)
-                      ), hintText: 'Enter region'),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      hintText: 'Enter region'),
                   items: <String>[
-                    'Africa', 
-                    'Antarctica',
                     'Asia',
+                    'Africa',
                     'Europe',
-                    'North America', 
-                    'Oceania',
-                    'South America'
-                    ].map((String value) {
+                    'America',
+                    'Antarctica',
+                  ].map((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
                       child: Text(value),
                     );
                   }).toList(),
-                    validator: (value) => value == null ? "Select a country" : null,
-                    value: selectedValue,
-                    onChanged: (String? newValue) {
-                      setState(() {
+                  validator: (value) =>
+                      value == null ? "Select a country" : null,
+                  value: selectedValue,
+                  onChanged: (String? newValue) {
+                    setState(() {
                       selectedValue = newValue!;
                     });
-                    },
-                  ),
-                )
-              ),
-              const SizedBox(height: 30),
-              SizedBox(
-                width: size.width * 0.8,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: kPrimaryColor,
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ChatScreen(),
-                      ),
-                    );
                   },
-                  child: const Text("Submit"),
-                )
+                ),
               ),
+              const SizedBox(height: 48),
+              SizedBox(
+                  width: size.width * 0.8,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: kPrimaryColor,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ChatScreen(),
+                        ),
+                      );
+                    },
+                    child: const Text("Submit"),
+                  )),
             ],
           ),
         ),
       ),
     );
   }
-  
 }
