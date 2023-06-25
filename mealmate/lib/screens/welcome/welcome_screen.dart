@@ -52,11 +52,11 @@ class NarrowLayout extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // const Image(
-              //   image: AssetImage("assets/images/chef_female.png"),
-              //   width: 250,
-              //   height: 200,
-              // ),
+              const Image(
+                image: AssetImage("assets/images/chef_female.png"),
+                width: 250,
+                height: 200,
+              ),
               const Text(
                 "MealMate",
                 style: TextStyle(fontSize: 36, color: Colors.white),
