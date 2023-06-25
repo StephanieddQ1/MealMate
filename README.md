@@ -6,7 +6,7 @@ A WaffleHacks project that provides solutions to food insecurities among college
 ## 🛠️ Built With
 - **Flutter**
 - **C++**
-- **HMTL**
+- **HTML**
 
 ## 💡 Inspiration 
 MealMate unites students worldwide, driven by a shared struggle against food insecurity. Our diverse NutriHackz team is dedicated to developing a tech solution for this relatable issue. Join us in transforming how students access nutritious meals and combat food insecurities. Together, we will make a difference!
