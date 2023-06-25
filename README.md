@@ -13,10 +13,7 @@ A WaffleHacks project that provides solutions to food insecurities among college
 MealMate unites students worldwide, driven by a shared struggle against food insecurity. Our diverse NutriHackz team is dedicated to developing a tech solution for this relatable issue. Join us in transforming how students access nutritious meals and combat food insecurities. Together, we will make a difference!
 
 ## 🤔 Purpose
-MealMate is a versatile web and mobile app that offers users a range of helpful features:
-- **Restaurant Recommendations:** Discover nearby restaurants that fit your budget and cater to your specific dietary needs.
-- **Recipe Chatbot:** Get personalized recipe suggestions based on your food preferences and choices.
-- **Workshop Suggestions:** Access a curated list of workshops and events focused on healthy feeding habits in your local area.
+MealMate is a mobile application that utilizes the user's location, and budget as inputs to offer food recommendations and a corresponding recipe. By considering these factors, MealMate presents the user with tailored meal suggestions that align with their specific needs and preferences.
 
 ## 🎨 Design
 We were heavily inspired by the revised version of Double Diamond design process, which not only includes visual design, but a full-fledged research cycle in which you must discover and define your problem before tackling your solution & then finally deploy it.
@@ -31,7 +28,7 @@ We were heavily inspired by the revised version of Double Diamond design process
 ## 😤 Challenges Encountered
 
 - **Coordinating diverse skills:** Choosing programming and design tools that suited everyone's preferences and skills posed initial implementation difficulties.
-- **Design consistency across platforms:** Balancing visual appeal and usability between web and mobile posed challenges due to differing viewing styles and limitations.
+- **Design consistency across platforms:** Balancing visual appeal and usability on the mobile apllication posed challenges due to differing viewing styles and limitations.
 - **Time zone differences:** Coordinating schedules and collaboration among team members from different countries with varying time zones posed significant challenges.
 
 ## ✨ Proud Achievements
